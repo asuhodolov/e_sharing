@@ -7,6 +7,18 @@
 
 import Foundation
 
+protocol ScootersMapViewPresenterInput {
+    
+}
+
 final class ScootersMapViewPresenter {
+    weak var view: ScootersMapViewControllerInput?
+    
+    
+}
+
+//MARK: - ScootersMapViewPresenterInput
+
+extension ScootersMapViewPresenter: ScootersMapViewPresenterInput {
     
 }
