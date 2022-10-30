@@ -1,5 +1,5 @@
 //
-//  Vehicle.swift
+//  MapItem.swift
 //  
 //
 //  Created by Aliaksandr Sukhadolau on 21.10.22.
@@ -13,13 +13,13 @@ public enum MapItemDecodingError: Error {
 
 struct MapItemsResponseData: Decodable {
     let vehiclesData: [MapItem]
-    let statusCode: Int
     
     enum CodingKeys: String, CodingKey {
         case vehiclesData = "data"
-        case statusCode
     }
 }
+
+public typealias MapItemId = String
 
 public struct MapItem: Decodable {
     public enum ItemType {
@@ -43,7 +43,7 @@ public struct MapItem: Decodable {
         }
     }
     
-    public let id: String
+    public let id: MapItemId
     public let type: ItemType
     
     enum CodingKeys: String, CodingKey {
@@ -74,8 +74,8 @@ public struct VehicleAttributes: Decodable {
     
     public let type: VehicleType
     public let batteryLevel: Int
-    public let latitude: Float
-    public let longitude: Float
+    public let latitude: Double
+    public let longitude: Double
     public let maxSpeed: Int
     public let hasHelmetBox: Bool
     

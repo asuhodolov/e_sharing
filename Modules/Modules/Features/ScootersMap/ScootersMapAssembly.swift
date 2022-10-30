@@ -9,7 +9,7 @@ import Foundation
 import Services
 import UIKit
 
-public final class ScootersMapAssembly {
+public enum ScootersMapAssembly {
     public struct Dependencies {
         let vehiclesProvider: VehiclesProviderProtocol
 
@@ -18,12 +18,15 @@ public final class ScootersMapAssembly {
         }
     }
     
-    public class func assemble(dependencies: Dependencies) -> UIViewController {
+    public static func assemble(dependencies: Dependencies) -> UIViewController {
         let presenter = ScootersMapViewPresenter()
-        let interactor = ScootersMapViewInteractor(vehiclesProvider: dependencies.vehiclesProvider,
-                                                   presenter: presenter)
+        let interactor = ScootersMapViewInteractor(
+            vehiclesProvider: dependencies.vehiclesProvider,
+            presenter: presenter)
         let viewController = ScootersMapViewController(interactor: interactor)
         presenter.view = viewController
+        interactor.presentModalView = viewController.viewModalPresenter
+        interactor.dismissModalView = viewController.viewModalDismisser
         return viewController
     }
 }

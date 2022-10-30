@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  ESharing
+
+  Created by Aliaksandr Sukhadolau on 28.10.22.
+  
+*/
+
+"VehicleType_escooter" = "Electric Scooter";
+"VehicleType_emoped" = "Electric Moped";
+"VehicleType_ebicycle" = "Electric Bicycle";

@@ -35,8 +35,5 @@ let package = Package(
             dependencies: [
                 "Services"],
             path: "Features")
-//        .testTarget(
-//            name: "ModulesTests",
-//            dependencies: ["Modules"]),
     ]
 )

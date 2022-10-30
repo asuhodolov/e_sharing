@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Services
 import Features
+import CoreLocation
 
 public final class ApplicationRouter: NSObject {
     let window: UIWindow

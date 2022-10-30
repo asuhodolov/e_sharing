@@ -40,6 +40,17 @@ targets:
         UILaunchStoryboardName: LaunchScreen
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait 
+        CFBundleDocumentTypes:
+          - 
+              CFBundleTypeName: MKDirectionsRequest
+              LSItemContentTypes: [com.apple.maps.directionsrequest]
+        MKDirectionsApplicationSupportedModes:
+          - MKDirectionsModeBike
+          - MKDirectionsModePedestrian
+        NSLocationWhenInUseUsageDescription:
+          - ESharing uses your location to provide vehicles near you
+        NSLocationAlwaysAndWhenInUseUsageDescription:
+          - ESharing uses your location to provide vehicles near you
 
     sources:
       - path: Code
